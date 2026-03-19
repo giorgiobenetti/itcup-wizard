@@ -9,46 +9,30 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #C0272D;
-  --surface: rgba(0,0,0,0.2);
-  --surface-2: rgba(0,0,0,0.14);
-  --surface-hover: rgba(0,0,0,0.3);
-  --border: rgba(255,255,255,0.16);
-  --border-strong: rgba(255,255,255,0.26);
-  --text: #fff;
-  --text-2: rgba(255,255,255,0.75);
-  --text-3: rgba(255,255,255,0.4);
-  --teal: #2BA8A0;
-  --teal-hover: #239990;
-  --green: #2ECC71;
-  --green-dim: rgba(46,204,113,0.15);
-  --green-border: rgba(46,204,113,0.35);
-  --amber-dim: rgba(245,166,35,0.15);
-  --amber-border: rgba(245,166,35,0.4);
-  --err: rgba(255,100,100,0.85);
-  --radius: 5px;
-  --radius-lg: 8px;
+  --bg: #C0272D; --surface: rgba(0,0,0,0.2); --surface-2: rgba(0,0,0,0.14);
+  --surface-hover: rgba(0,0,0,0.3); --border: rgba(255,255,255,0.16);
+  --border-strong: rgba(255,255,255,0.26); --text: #fff;
+  --text-2: rgba(255,255,255,0.75); --text-3: rgba(255,255,255,0.4);
+  --teal: #2BA8A0; --teal-hover: #239990; --green: #2ECC71;
+  --green-dim: rgba(46,204,113,0.15); --green-border: rgba(46,204,113,0.35);
+  --amber-dim: rgba(245,166,35,0.15); --amber-border: rgba(245,166,35,0.4);
+  --err: rgba(255,100,100,0.85); --radius: 5px; --radius-lg: 8px;
 }
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 48px 16px 80px; line-height: 1.5; }
-
 .header { text-align: center; margin-bottom: 28px; }
 .header h1 { font-size: 26px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 12px; }
 .header p { font-size: 12px; color: var(--text-2); line-height: 1.65; max-width: 440px; margin: 0 auto; }
-
 .container { max-width: 500px; margin: 0 auto; }
-
 .progress-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 12px 16px; margin-bottom: 14px; }
 .progress-top { display: flex; justify-content: space-between; margin-bottom: 8px; }
 .progress-label { font-size: 10px; font-weight: 500; color: var(--text-2); }
 .progress-count { font-family: 'Inter Mono', monospace; font-size: 10px; color: var(--text-3); }
 .progress-track { height: 2px; background: rgba(255,255,255,0.12); border-radius: 99px; overflow: hidden; }
 .progress-fill { height: 100%; background: var(--teal); border-radius: 99px; transition: width 0.4s ease; }
-
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; margin-bottom: 10px; }
 .card-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
 .card-sub { font-size: 12px; color: var(--text-2); line-height: 1.6; }
 .sec-label { font-family: 'Inter Mono', monospace; font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-3); margin-bottom: 7px; }
-
 .broker-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .broker-opt { border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 14px 8px 12px; display: flex; flex-direction: column; align-items: center; gap: 9px; cursor: pointer; background: var(--surface-2); transition: all 0.15s; user-select: none; }
 .broker-opt:hover { background: var(--surface-hover); border-color: rgba(255,255,255,0.45); }
@@ -60,7 +44,6 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .broker-logo-ph { width: 44px; height: 44px; border-radius: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.3; }
 .broker-name { font-size: 11px; font-weight: 600; color: #fff; }
 .broker-note { font-size: 9px; color: var(--text-3); text-align: center; line-height: 1.3; }
-
 .radio-group { display: flex; flex-direction: column; gap: 7px; }
 .radio-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 11px 13px; cursor: pointer; display: flex; align-items: flex-start; gap: 10px; background: var(--surface-2); transition: all 0.15s; user-select: none; }
 .radio-card:hover { background: var(--surface-hover); }
@@ -71,7 +54,6 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .radio-dot.on::after { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #fff; }
 .radio-label { font-size: 13px; font-weight: 500; }
 .radio-desc { font-size: 11px; color: var(--text-2); margin-top: 2px; line-height: 1.45; }
-
 .alert { border-radius: var(--radius); padding: 10px 12px; display: flex; gap: 8px; align-items: flex-start; font-size: 11px; line-height: 1.55; margin-bottom: 10px; }
 .alert-icon { font-size: 12px; flex-shrink: 0; margin-top: 1px; }
 .alert-amber { background: var(--amber-dim); border: 1px solid var(--amber-border); color: #F5C26B; }
@@ -80,12 +62,10 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .alert-white strong { color: #fff; }
 .alert-green { background: var(--green-dim); border: 1px solid var(--green-border); color: #6EE8A0; }
 .alert strong { font-weight: 600; }
-
 .mobile-warn { background: rgba(0,0,0,0.18); border: 1.5px solid rgba(255,255,255,0.35); border-radius: var(--radius); padding: 12px 14px; margin-bottom: 10px; }
 .mobile-warn-top { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
 .mobile-warn-title { font-size: 12px; font-weight: 600; }
 .mobile-warn-body { font-size: 11px; color: var(--text-2); line-height: 1.5; }
-
 .form-group { margin-bottom: 10px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
 .form-label { display: block; font-size: 11px; color: var(--text-2); margin-bottom: 4px; }
@@ -103,13 +83,10 @@ input.err { border-color: rgba(255,100,100,0.8) !important; }
 input.ok  { border-color: rgba(43,168,160,0.8) !important; }
 .hint { font-size: 10px; color: var(--text-3); margin-top: 3px; }
 .hint-err { font-size: 10px; color: var(--err); margin-top: 3px; display: none; line-height: 1.4; }
-
 .chk-wrap { display: flex; gap: 9px; align-items: flex-start; padding: 10px 12px; background: rgba(0,0,0,0.14); border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 8px; }
 .chk-wrap:last-child { margin-bottom: 0; }
 .chk-wrap input[type=checkbox] { width: 14px; height: 14px; margin-top: 2px; flex-shrink: 0; cursor: pointer; accent-color: var(--teal); }
 .chk-wrap label { font-size: 11px; color: var(--text-2); line-height: 1.5; cursor: pointer; }
-.chk-wrap label a { color: #fff; }
-
 .stepper { display: flex; flex-direction: column; }
 .sv-row { display: flex; gap: 11px; }
 .sv-left { display: flex; flex-direction: column; align-items: center; }
@@ -120,7 +97,6 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
 .sv-desc { font-size: 11px; color: var(--text-2); line-height: 1.55; }
 .info-row { display: flex; gap: 6px; font-size: 11px; color: var(--text-2); line-height: 1.5; margin-top: 6px; }
 .info-dot { width: 13px; height: 13px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: rgba(255,255,255,0.6); font-size: 8px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-
 .btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 18px; border-radius: var(--radius); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; text-decoration: none; white-space: nowrap; }
 .btn-teal { background: var(--teal); color: #fff; }
 .btn-teal:hover:not(:disabled) { background: var(--teal-hover); }
@@ -131,50 +107,38 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
 .btn-full { width: 100%; }
 .btn-sm { height: 32px; font-size: 11px; padding: 0 12px; }
 .btn:disabled { opacity: 0.35; cursor: not-allowed; }
-
 .nav-row { display: flex; gap: 8px; margin-top: 4px; }
 .nav-row .btn { flex: 1; }
-
 .sum-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 12px; }
 .sum-row:last-child { border-bottom: none; }
 .sum-key { color: var(--text-2); }
 .sum-val { font-weight: 500; font-family: 'Inter Mono', monospace; font-size: 11px; }
-
 .video-wrap { position: relative; width: 100%; padding-top: 56.25%; border-radius: var(--radius); overflow: hidden; background: #000; margin-top: 10px; }
 .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
 .email-block { background: rgba(0,0,0,0.18); border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 10px 12px; margin-bottom: 9px; }
 .email-to { font-size: 13px; font-weight: 600; font-family: 'Inter Mono', monospace; }
 .email-meta { font-size: 10px; color: var(--text-2); margin-top: 2px; }
 .email-meta span { color: rgba(255,255,255,0.82); }
-
 .screen { display: none; }
 .screen.active { display: block; animation: fadeIn 0.18s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-
 .legal-text { font-size: 11px; color: var(--text-2); line-height: 1.65; margin-bottom: 14px; }
 .legal-text strong { color: #fff; }
-
 .success-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--green-dim); border: 1.5px solid var(--green-border); display: flex; align-items: center; justify-content: center; font-size: 22px; margin: 0 auto 14px; }
 .success-card { text-align: center; padding: 28px 20px; }
 .success-card h2 { font-size: 18px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; }
 .success-card p { font-size: 12px; color: var(--text-2); line-height: 1.6; }
-
 .mobile-banner { display: none; background: rgba(0,0,0,0.28); border-bottom: 1px solid rgba(255,255,255,0.18); padding: 7px 16px; font-size: 10px; color: rgba(255,255,255,0.75); font-weight: 500; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
 @media (max-width: 480px) { .mobile-banner { display: block; } body { padding-top: 46px; } .header h1 { font-size: 20px; } .form-row { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-
-<div class="mobile-banner">⚠ Alcune funzioni richiedono il desktop</div>
-
+<div class="mobile-banner">&#9888; Alcune funzioni richiedono il desktop</div>
 <div class="header">
   <h1>Iscriviti al campionato</h1>
   <p>Per concorrere è necessario avere un conto aperto presso uno dei broker convenzionati all'atto dell'iscrizione. Per iscriversi è sufficiente compilare il seguente modulo che verrà poi recapitato per la sottoscrizione all'indirizzo email indicato.</p>
 </div>
-
 <div class="container">
-
   <div class="progress-wrap">
     <div class="progress-top">
       <span class="progress-label" id="prog-label">Selezione broker</span>
@@ -183,9 +147,8 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
     <div class="progress-track"><div class="progress-fill" id="prog-fill" style="width:25%"></div></div>
   </div>
 
-  <!-- ══ STEP 1 ══ -->
+  <!-- STEP 1 -->
   <div class="screen active" id="step-1">
-
     <div class="sec-label">Scegli il tuo intermediario</div>
     <div class="card">
       <div class="broker-grid">
@@ -217,7 +180,6 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
         </div>
       </div>
     </div>
-
     <div id="ig-extra" style="display:none;">
       <div class="sec-label" style="margin-top:2px;">Situazione con IG</div>
       <div class="card">
@@ -232,100 +194,98 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
           <div class="radio-card" id="rc-yes">
             <div class="radio-dot" id="rdot-yes"></div>
             <div>
-              <div class="radio-label">Ho già un conto IG</div>
+              <div class="radio-label">Ho gia un conto IG</div>
               <div class="radio-desc">Creerai un sub-account collegato a GWA tramite procedura guidata</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <div id="data-form-1" style="display:none;">
       <div class="sec-label" style="margin-top:2px;">I tuoi dati</div>
       <div class="card">
         <div class="form-row">
-          <div><label class="form-label">Nome *</label><input type="text" id="f-nome" placeholder=""></div>
-          <div><label class="form-label">Cognome *</label><input type="text" id="f-cognome" placeholder=""></div>
+          <div><label class="form-label">Nome *</label><input type="text" id="f-nome"></div>
+          <div><label class="form-label">Cognome *</label><input type="text" id="f-cognome"></div>
         </div>
         <div class="form-row">
-          <div><label class="form-label">Luogo di nascita *</label><input type="text" id="f-luogo-nascita" placeholder=""></div>
-          <div><label class="form-label">Provincia di nascita *</label><input type="text" id="f-prov-nascita" placeholder=""></div>
+          <div><label class="form-label">Luogo di nascita *</label><input type="text" id="f-luogo-nascita"></div>
+          <div><label class="form-label">Provincia di nascita *</label><input type="text" id="f-prov-nascita"></div>
         </div>
         <div class="form-row">
           <div><label class="form-label">Data di nascita (GG/MM/AAAA) *</label><input type="text" id="f-data-nascita" placeholder="GG/MM/AAAA"></div>
-          <div><label class="form-label">Luogo di residenza *</label><input type="text" id="f-luogo-res" placeholder=""></div>
+          <div><label class="form-label">Luogo di residenza *</label><input type="text" id="f-luogo-res"></div>
         </div>
         <div class="form-row">
-          <div><label class="form-label">Provincia di residenza *</label><input type="text" id="f-prov-res" placeholder=""></div>
-          <div><label class="form-label">Indirizzo *</label><input type="text" id="f-indirizzo" placeholder=""></div>
+          <div><label class="form-label">Provincia di residenza *</label><input type="text" id="f-prov-res"></div>
+          <div><label class="form-label">Indirizzo *</label><input type="text" id="f-indirizzo"></div>
         </div>
         <div class="form-row">
-          <div><label class="form-label">CAP *</label><input type="text" id="f-cap" placeholder=""></div>
+          <div><label class="form-label">CAP *</label><input type="text" id="f-cap"></div>
           <div>
             <label class="form-label">Codice fiscale *</label>
-            <input type="text" id="f-cf" placeholder="" maxlength="16" style="text-transform:uppercase">
+            <input type="text" id="f-cf" maxlength="16" style="text-transform:uppercase">
             <div class="hint-err" id="cf-err">Codice fiscale non valido (16 caratteri)</div>
           </div>
         </div>
         <div class="form-row" style="margin-bottom:0;">
-          <div><label class="form-label">Email *</label><input type="email" id="f-email" placeholder=""></div>
-          <div><label class="form-label">Telefono *</label><input type="text" id="f-telefono" placeholder=""></div>
+          <div><label class="form-label">Email *</label><input type="email" id="f-email"></div>
+          <div><label class="form-label">Telefono *</label><input type="text" id="f-telefono"></div>
         </div>
       </div>
     </div>
-
     <div class="nav-row" style="margin-top:0;">
-      <button class="btn btn-teal btn-full" id="btn-step1" disabled>Continua →</button>
+      <button class="btn btn-teal btn-full" id="btn-step1" disabled>Continua &#8594;</button>
     </div>
   </div>
 
-  <!-- ══ STEP 2a: IG nuovo ══ -->
+  <!-- STEP 2a -->
   <div class="screen" id="step-2a">
     <div class="mobile-warn">
-      <div class="mobile-warn-top"><span style="font-size:14px;">⚠</span><span class="mobile-warn-title">Apri il link SOLO da desktop</span></div>
-      <div class="mobile-warn-body">A causa di un problema tecnico di IG, la registrazione da smartphone perde il collegamento con GWA e non potrai partecipare alla classifica.</div>
+      <div class="mobile-warn-top"><span style="font-size:14px;">&#9888;</span><span class="mobile-warn-title">Apri il link SOLO da desktop</span></div>
+      <div class="mobile-warn-body">A causa di un problema tecnico di IG, la registrazione da smartphone perde il collegamento con GWA.</div>
     </div>
     <div class="card">
       <div class="card-title" style="margin-bottom:6px;">Apri il conto IG con GWA</div>
-      <div class="card-sub" style="margin-bottom:12px;">Il link contiene già i parametri del partner GWA, necessari per calcolare la classifica.</div>
+      <div class="card-sub" style="margin-bottom:12px;">Il link contiene gia i parametri del partner GWA, necessari per calcolare la classifica.</div>
       <div class="chk-wrap" style="margin-bottom:11px;">
         <input type="checkbox" id="chk-desktop">
         <label for="chk-desktop">Confermo di stare aprendo questo link da un <strong style="color:#fff;">computer desktop o laptop</strong></label>
       </div>
-      <button class="btn btn-teal btn-full" id="btn-open-ig" disabled>Apri registrazione IG →</button>
+      <button class="btn btn-teal btn-full" id="btn-open-ig" disabled>Apri registrazione IG &#8594;</button>
       <div id="ig-opened" style="display:none;margin-top:9px;">
-        <div class="alert alert-green"><span class="alert-icon">✓</span><div>Link aperto. Completa la registrazione su IG e torna qui.</div></div>
+        <div class="alert alert-green"><span class="alert-icon">&#10003;</span><div>Link aperto. Completa la registrazione su IG e torna qui.</div></div>
       </div>
     </div>
     <div class="nav-row">
-      <button class="btn btn-ghost" id="btn-back-2a">← Indietro</button>
-      <button class="btn btn-teal" id="btn-next-2a">Ho aperto il conto →</button>
+      <button class="btn btn-ghost" id="btn-back-2a">&#8592; Indietro</button>
+      <button class="btn btn-teal" id="btn-next-2a">Ho aperto il conto &#8594;</button>
     </div>
   </div>
 
-  <!-- ══ STEP 2b: IG esistente ══ -->
+  <!-- STEP 2b -->
   <div class="screen" id="step-2b">
     <div class="alert alert-white">
-      <span class="alert-icon">ℹ</span>
-      <div>Con un conto IG esistente <strong>non puoi trasferirlo né aprirne uno nuovo</strong> dal nostro link. Segui questi passaggi per creare un sub-account collegato a GWA.</div>
+      <span class="alert-icon">&#9432;</span>
+      <div>Con un conto IG esistente <strong>non puoi trasferirlo ne aprirne uno nuovo</strong> dal nostro link. Segui questi passaggi per creare un sub-account collegato a GWA.</div>
     </div>
     <div class="card">
-      <div class="card-title" style="margin-bottom:13px;">Procedura guidata — 4 passaggi</div>
+      <div class="card-title" style="margin-bottom:13px;">Procedura guidata &#8212; 4 passaggi</div>
       <div class="stepper">
         <div class="sv-row">
           <div class="sv-left"><div class="sv-num">1</div><div class="sv-line"></div></div>
           <div class="sv-body">
             <div class="sv-title">Accedi al tuo conto IG</div>
             <div class="sv-desc">Entra nella piattaforma con le credenziali abituali.</div>
-            <a class="btn btn-ghost btn-sm" href="https://www.ig.com/it/loginpage" target="_blank" rel="noopener" style="margin-top:7px;display:inline-flex;">Vai a IG Italia →</a>
+            <a class="btn btn-ghost btn-sm" href="https://www.ig.com/it/loginpage" target="_blank" rel="noopener" style="margin-top:7px;display:inline-flex;">Vai a IG Italia &#8594;</a>
           </div>
         </div>
         <div class="sv-row">
           <div class="sv-left"><div class="sv-num">2</div><div class="sv-line"></div></div>
           <div class="sv-body">
             <div class="sv-title">Crea un nuovo sub-account</div>
-            <div class="sv-desc">Dal menu profilo seleziona <strong>"Aggiungi account"</strong> e segna il numero assegnato.</div>
-            <div class="info-row"><div class="info-dot">i</div><span>Il numero del sub-account è diverso dal conto principale.</span></div>
+            <div class="sv-desc">Dal menu profilo seleziona "Aggiungi account" e segna il numero assegnato.</div>
+            <div class="info-row"><div class="info-dot">i</div><span>Il numero del sub-account e diverso dal conto principale.</span></div>
             <div class="sv-desc" style="margin-top:9px;">Guarda il video tutorial:</div>
             <div class="video-wrap"><iframe src="https://www.loom.com/embed/909ea92114a64e109ee3e5d7a7a472da" allowfullscreen></iframe></div>
           </div>
@@ -342,7 +302,7 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
               <div class="hint-err" id="sub-err"></div>
             </div>
             <div id="letter-ready" style="display:none;">
-              <div class="alert alert-green" style="margin-bottom:0;"><span class="alert-icon">✓</span><div>Lettera pronta. Vai al passo 4 per inviarla con un click.</div></div>
+              <div class="alert alert-green" style="margin-bottom:0;"><span class="alert-icon">&#10003;</span><div>Lettera pronta. Vai al passo 4 per inviarla con un click.</div></div>
             </div>
           </div>
         </div>
@@ -350,14 +310,14 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
           <div class="sv-left"><div class="sv-num">4</div></div>
           <div class="sv-body" style="padding-bottom:0;">
             <div class="sv-title">Invia la lettera a IG</div>
-            <div class="sv-desc" style="margin-bottom:9px;">Clicca il pulsante: si apre la tua email con tutto già precompilato. Aggiungi la firma e invia.</div>
+            <div class="sv-desc" style="margin-bottom:9px;">Clicca il pulsante: si apre la tua email con tutto gia precompilato. Aggiungi la firma e invia.</div>
             <div class="email-block">
-              <div class="email-to"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="96ffe5f2d6fff1b8f5f9fb">[email&#160;protected]</a></div>
-              <div class="email-meta">Cc: <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="472e292128072e33243237692e33">[email&#160;protected]</a></span></div>
-              <div class="email-meta">Oggetto: <span>Inducement Letter – GWA Investments</span></div>
+              <div class="email-to">isd@ig.com</div>
+              <div class="email-meta">Cc: <span>info@itcup.it</span></div>
+              <div class="email-meta">Oggetto: <span>Inducement Letter - GWA Investments</span></div>
             </div>
-            <button class="btn btn-teal btn-sm btn-full" id="btn-open-mail" disabled style="margin-bottom:9px;">Apri email precompilata →</button>
-            <div class="alert alert-amber" style="margin-bottom:9px;"><span class="alert-icon">⏱</span><div>IG elabora la lettera in <strong>2–3 giorni lavorativi</strong>. Completala con anticipo.</div></div>
+            <button class="btn btn-teal btn-sm btn-full" id="btn-open-mail" disabled style="margin-bottom:9px;">Apri email precompilata &#8594;</button>
+            <div class="alert alert-amber" style="margin-bottom:9px;"><span class="alert-icon">&#9201;</span><div>IG elabora la lettera in <strong>2-3 giorni lavorativi</strong>. Completala con anticipo.</div></div>
             <div class="chk-wrap">
               <input type="checkbox" id="chk-letter-sent">
               <label for="chk-letter-sent">Ho inviato la lettera a IG e sono in attesa di conferma</label>
@@ -367,33 +327,33 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
       </div>
     </div>
     <div class="nav-row">
-      <button class="btn btn-ghost" id="btn-back-2b">← Indietro</button>
-      <button class="btn btn-teal" id="btn-next-2b" disabled>Continua →</button>
+      <button class="btn btn-ghost" id="btn-back-2b">&#8592; Indietro</button>
+      <button class="btn btn-teal" id="btn-next-2b" disabled>Continua &#8594;</button>
     </div>
   </div>
 
-  <!-- ══ STEP 2c: altri broker ══ -->
+  <!-- STEP 2c -->
   <div class="screen" id="step-2c">
     <div class="card">
       <div class="card-title" style="margin-bottom:4px;" id="other-broker-title">Iscrizione</div>
       <div class="card-sub" style="margin-bottom:13px;">Inserisci i dati del tuo conto per partecipare.</div>
       <div class="form-group">
         <label class="form-label">Numero di conto *</label>
-        <input type="text" id="f-other-account" placeholder="">
+        <input type="text" id="f-other-account">
       </div>
       <div class="form-group" style="margin-bottom:0;">
-        <label class="form-label">Versamento iniziale (€) *</label>
+        <label class="form-label">Versamento iniziale (&#8364;) *</label>
         <input type="number" id="f-other-capital" placeholder="Es. 10000" min="2500">
-        <div class="hint">Minimo € 2.500</div>
+        <div class="hint">Minimo &#8364; 2.500</div>
       </div>
     </div>
     <div class="nav-row">
-      <button class="btn btn-ghost" id="btn-back-2c">← Indietro</button>
-      <button class="btn btn-teal" id="btn-next-2c" disabled>Continua →</button>
+      <button class="btn btn-ghost" id="btn-back-2c">&#8592; Indietro</button>
+      <button class="btn btn-teal" id="btn-next-2c" disabled>Continua &#8594;</button>
     </div>
   </div>
 
-  <!-- ══ STEP 3a: IG nuovo - conto ══ -->
+  <!-- STEP 3a -->
   <div class="screen" id="step-3a">
     <div class="card">
       <div class="card-title" style="margin-bottom:4px;">Dati del conto IG</div>
@@ -405,21 +365,21 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
         <div class="hint-err" id="ig-account-err"></div>
       </div>
       <div class="form-group" style="margin-bottom:0;">
-        <label class="form-label">Versamento iniziale (€) *</label>
+        <label class="form-label">Versamento iniziale (&#8364;) *</label>
         <input type="number" id="f-ig-capital" placeholder="Es. 10000" min="2500">
-        <div class="hint">Minimo € 2.500</div>
+        <div class="hint">Minimo &#8364; 2.500</div>
       </div>
     </div>
     <div class="nav-row">
-      <button class="btn btn-ghost" id="btn-back-3a">← Indietro</button>
-      <button class="btn btn-teal" id="btn-next-3a" disabled>Continua →</button>
+      <button class="btn btn-ghost" id="btn-back-3a">&#8592; Indietro</button>
+      <button class="btn btn-teal" id="btn-next-3a" disabled>Continua &#8594;</button>
     </div>
   </div>
 
-  <!-- ══ STEP 3b: IG esistente - conto ══ -->
+  <!-- STEP 3b -->
   <div class="screen" id="step-3b">
     <div class="alert alert-white">
-      <span class="alert-icon">ℹ</span>
+      <span class="alert-icon">&#9432;</span>
       <div>Usa il <strong>numero del sub-account</strong> creato nel passaggio precedente, non il conto principale.</div>
     </div>
     <div class="card">
@@ -432,38 +392,38 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
         <div class="hint-err" id="sub-confirm-err"></div>
       </div>
       <div class="form-group" style="margin-bottom:0;">
-        <label class="form-label">Versamento iniziale (€) *</label>
+        <label class="form-label">Versamento iniziale (&#8364;) *</label>
         <input type="number" id="f-sub-capital" placeholder="Es. 10000" min="2500">
-        <div class="hint">Minimo € 2.500</div>
+        <div class="hint">Minimo &#8364; 2.500</div>
       </div>
     </div>
     <div class="nav-row">
-      <button class="btn btn-ghost" id="btn-back-3b">← Indietro</button>
-      <button class="btn btn-teal" id="btn-next-3b" disabled>Continua →</button>
+      <button class="btn btn-ghost" id="btn-back-3b">&#8592; Indietro</button>
+      <button class="btn btn-teal" id="btn-next-3b" disabled>Continua &#8594;</button>
     </div>
   </div>
 
-  <!-- ══ STEP 4: Conferma ══ -->
+  <!-- STEP 4 -->
   <div class="screen" id="step-confirm">
     <div class="sec-label">Riepilogo iscrizione</div>
     <div class="card" style="margin-bottom:10px;"><div id="summary-rows"></div></div>
     <div class="legal-text">
-      Per concorrere è necessario avere un conto aperto presso uno dei broker convenzionati all'atto dell'iscrizione. Per iscriversi è sufficiente compilare il seguente modulo che verrà poi recapitato per la sottoscrizione all'indirizzo email indicato.<br><br>
-      Accetto per intero il bando del 28° Campionato ITCUP di Borsa edizione 2026 così come pubblicato sul sito <strong>www.itcup.it</strong> ed accetto fin da ora sue eventuali modifiche successive.<br><br>
-      Parteciperò al Campionato con il conto <span id="confirm-broker-text" style="font-weight:600;color:#fff;"></span>.
+      Per concorrere e necessario avere un conto aperto presso uno dei broker convenzionati all'atto dell'iscrizione.<br><br>
+      Accetto per intero il bando del 28 Campionato ITCUP di Borsa edizione 2026 cosi come pubblicato sul sito <strong>www.itcup.it</strong> ed accetto fin da ora sue eventuali modifiche successive.<br><br>
+      Partecipero al Campionato con il conto <span id="confirm-broker-text" style="font-weight:600;color:#fff;"></span>.
     </div>
     <div class="card">
       <div class="chk-wrap">
         <input type="checkbox" id="chk-p1">
-        <label for="chk-p1">Concedo a Borsaefinanza srl l'autorizzazione a trattare i miei dati personali ai sensi del regolamento UE 2016/679 (titolare del trattamento dati è Borsaefinanza srl) come meglio specificato nel regolamento</label>
+        <label for="chk-p1">Concedo a Borsaefinanza srl l'autorizzazione a trattare i miei dati personali ai sensi del regolamento UE 2016/679 come meglio specificato nel regolamento</label>
       </div>
       <div class="chk-wrap">
         <input type="checkbox" id="chk-p2" checked>
-        <label for="chk-p2">✓ Autorizzo Borsaefinanza srl a richiedere alle sim i miei estratti conto onde verificarne la regolarità ed altresì autorizzo la sim stessa a fornirli</label>
+        <label for="chk-p2">Autorizzo Borsaefinanza srl a richiedere alle sim i miei estratti conto onde verificarne la regolarita ed altresi autorizzo la sim stessa a fornirli</label>
       </div>
       <div class="chk-wrap">
         <input type="checkbox" id="chk-p3">
-        <label for="chk-p3">Autorizzo Borsaefinanza srl e l'intermediario a diffondere al pubblico ed alla stampa il dettaglio delle operazioni da me eseguite (data, ora, prezzo di entrata ed uscita, strumento, etc.).</label>
+        <label for="chk-p3">Autorizzo Borsaefinanza srl e l'intermediario a diffondere al pubblico ed alla stampa il dettaglio delle operazioni da me eseguite.</label>
       </div>
       <div class="chk-wrap">
         <input type="checkbox" id="chk-p4">
@@ -472,34 +432,32 @@ input.ok  { border-color: rgba(43,168,160,0.8) !important; }
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
       <button class="btn btn-submit btn-full" id="btn-confirm">INOLTRA LA RICHIESTA D'ISCRIZIONE &gt;&gt;</button>
-      <button class="btn btn-ghost btn-full" id="btn-back-confirm">← Modifica dati</button>
+      <button class="btn btn-ghost btn-full" id="btn-back-confirm">&#8592; Modifica dati</button>
     </div>
   </div>
 
-  <!-- ══ SUCCESS ══ -->
+  <!-- SUCCESS -->
   <div class="screen" id="step-success">
     <div class="card success-card">
-      <div class="success-icon">✓</div>
+      <div class="success-icon">&#10003;</div>
       <h2>Iscrizione completata!</h2>
-      <p style="margin-bottom:14px;">Abbiamo ricevuto la tua iscrizione alla ITcup Trading Competition. Riceverai una email di conferma a <strong id="success-email" style="color:#fff;"></strong>.</p>
+      <p style="margin-bottom:14px;">Abbiamo ricevuto la tua iscrizione. Riceverai una email di conferma a <strong id="success-email" style="color:#fff;"></strong>.</p>
       <div class="alert alert-green" style="text-align:left;">
-        <span class="alert-icon">📬</span>
-        <div id="success-extra">La tua partecipazione è attiva. Buona fortuna!</div>
+        <span class="alert-icon">&#128204;</span>
+        <div id="success-extra">La tua partecipazione e attiva. Buona fortuna!</div>
       </div>
     </div>
   </div>
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 window.addEventListener('load', function() {
-
-  /* ── state ── */
-  var S = { broker:null, igStatus:null, nome:'', cognome:'', email:'' };
+  var S = { broker:null, igStatus:null, nome:'', cognome:'', email:'', letterText:'' };
   var cur = 'step-1';
 
-  /* ── helpers ── */
   function el(id) { return document.getElementById(id); }
+  function on(id, ev, fn) { el(id).addEventListener(ev, fn); }
 
   function nav(id, step) {
     el(cur).classList.remove('active');
@@ -512,55 +470,37 @@ window.addEventListener('load', function() {
     window.scrollTo({top:0, behavior:'smooth'});
   }
 
-  function on(id, ev, fn) { el(id).addEventListener(ev, fn); }
-
-  /* ── CF validation ── */
   function validaCF(cf) {
     cf = cf.toUpperCase().trim();
     return cf.length === 16 && /^[A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$/.test(cf);
   }
 
-  /* ── IG account validation ── */
   function validaContoIG(account, cognome) {
     account = account.toUpperCase().trim();
-    cognome = cognome.trim();
     if (account.length !== 5) return { ok:false, msg:'Il numero di conto deve essere di esattamente 5 caratteri.' };
-    if (!/^[A-Z]{5}$/.test(account)) return { ok:false, msg:'Il numero di conto deve contenere solo lettere maiuscole (es. BQPWM).' };
-    if (cognome.length > 0) {
-      var ini = cognome.charAt(0).toUpperCase();
-      if (account.charAt(0) !== ini) return { ok:false, msg:'Il numero di conto deve iniziare con "' + ini + '" (iniziale del cognome). Verifica nel portale IG.' };
+    if (!/^[A-Z]{5}$/.test(account)) return { ok:false, msg:'Solo lettere maiuscole (es. BQPWM).' };
+    if (cognome.trim().length > 0) {
+      var ini = cognome.trim().charAt(0).toUpperCase();
+      if (account.charAt(0) !== ini) return { ok:false, msg:'Deve iniziare con "' + ini + '" (iniziale del cognome). Verifica nel portale IG.' };
     }
     return { ok:true };
   }
 
-  /* ─────────────────────────────
-     STEP 1
-  ───────────────────────────── */
   var REQUIRED = ['f-nome','f-cognome','f-luogo-nascita','f-prov-nascita','f-data-nascita','f-luogo-res','f-prov-res','f-indirizzo','f-cap','f-cf','f-email','f-telefono'];
 
   function checkS1() {
-    var filled = REQUIRED.every(function(id) {
-      var e = el(id); return e && e.value.trim().length > 0;
-    });
+    var filled = REQUIRED.every(function(id) { var e = el(id); return e && e.value.trim().length > 0; });
     var emailOk = /\S+@\S+\.\S+/.test(el('f-email').value.trim());
     var cf = el('f-cf').value;
     var cfOk = validaCF(cf);
-    var brokerOk = S.broker !== null;
-    var igOk = S.broker !== 'ig' || S.igStatus !== null;
-
-    /* CF feedback */
     if (cf.trim().length > 0 && !cfOk) {
-      el('f-cf').className = 'err';
-      el('cf-err').style.display = 'block';
+      el('f-cf').className = 'err'; el('cf-err').style.display = 'block';
     } else {
-      el('f-cf').className = cf.trim().length === 16 ? 'ok' : '';
-      el('cf-err').style.display = 'none';
+      el('f-cf').className = cf.trim().length === 16 ? 'ok' : ''; el('cf-err').style.display = 'none';
     }
-
-    el('btn-step1').disabled = !(filled && emailOk && cfOk && brokerOk && igOk);
+    el('btn-step1').disabled = !(filled && emailOk && cfOk && S.broker !== null && (S.broker !== 'ig' || S.igStatus !== null));
   }
 
-  /* broker click */
   ['ig','scalable','crypto'].forEach(function(b) {
     on('broker-'+b, 'click', function() {
       S.broker = b;
@@ -568,185 +508,124 @@ window.addEventListener('load', function() {
       el('broker-'+b).classList.add('selected');
       el('ig-extra').style.display = b==='ig' ? 'block' : 'none';
       el('data-form-1').style.display = 'block';
-      if (b !== 'ig') { S.igStatus = null; }
+      if (b !== 'ig') S.igStatus = null;
       checkS1();
     });
   });
 
-  /* IG status click */
-  on('rc-no', 'click', function() {
-    S.igStatus = 'new';
-    el('rc-no').classList.add('selected');   el('rc-yes').classList.remove('selected');
-    el('rdot-no').classList.add('on');       el('rdot-yes').classList.remove('on');
+  on('rc-no','click',function(){
+    S.igStatus='new';
+    el('rc-no').classList.add('selected'); el('rc-yes').classList.remove('selected');
+    el('rdot-no').classList.add('on'); el('rdot-yes').classList.remove('on');
     checkS1();
   });
-  on('rc-yes', 'click', function() {
-    S.igStatus = 'existing';
-    el('rc-yes').classList.add('selected');  el('rc-no').classList.remove('selected');
-    el('rdot-yes').classList.add('on');      el('rdot-no').classList.remove('on');
+  on('rc-yes','click',function(){
+    S.igStatus='existing';
+    el('rc-yes').classList.add('selected'); el('rc-no').classList.remove('selected');
+    el('rdot-yes').classList.add('on'); el('rdot-no').classList.remove('on');
     checkS1();
   });
 
-  /* field inputs */
-  REQUIRED.forEach(function(id) { on(id, 'input', checkS1); });
+  REQUIRED.forEach(function(id){ on(id,'input',checkS1); });
 
-  on('btn-step1', 'click', function() {
-    S.nome    = el('f-nome').value.trim();
-    S.cognome = el('f-cognome').value.trim();
-    S.email   = el('f-email').value.trim();
-    if (S.broker==='ig' && S.igStatus==='new') nav('step-2a', 2);
-    else if (S.broker==='ig' && S.igStatus==='existing') nav('step-2b', 2);
-    else {
-      el('other-broker-title').textContent = 'Iscrizione ' + (S.broker==='scalable' ? 'Scalable' : 'BrokerCrypto');
-      nav('step-2c', 2);
-    }
+  on('btn-step1','click',function(){
+    S.nome=el('f-nome').value.trim(); S.cognome=el('f-cognome').value.trim(); S.email=el('f-email').value.trim();
+    if(S.broker==='ig'&&S.igStatus==='new') nav('step-2a',2);
+    else if(S.broker==='ig'&&S.igStatus==='existing') nav('step-2b',2);
+    else { el('other-broker-title').textContent='Iscrizione '+(S.broker==='scalable'?'Scalable':'BrokerCrypto'); nav('step-2c',2); }
   });
 
-  /* ─────────────────────────────
-     STEP 2a
-  ───────────────────────────── */
-  on('chk-desktop', 'change', function() { el('btn-open-ig').disabled = !this.checked; });
-  on('btn-open-ig', 'click', function() {
-    window.open('https://www.ig.com/it/application-form?QPID=3774844611&QPPID=1', '_blank');
-    el('ig-opened').style.display = 'block';
-    this.textContent = 'Link aperto ✓';
-    this.style.background = '#1a7a74';
+  on('chk-desktop','change',function(){ el('btn-open-ig').disabled=!this.checked; });
+  on('btn-open-ig','click',function(){
+    window.open('https://www.ig.com/it/application-form?QPID=3774844611&QPPID=1','_blank');
+    el('ig-opened').style.display='block';
+    this.textContent='Link aperto'; this.style.background='#1a7a74';
   });
-  on('btn-back-2a', 'click', function() { nav('step-1', 1); });
-  on('btn-next-2a', 'click', function() { nav('step-3a', 3); });
+  on('btn-back-2a','click',function(){ nav('step-1',1); });
+  on('btn-next-2a','click',function(){ nav('step-3a',3); });
 
-  /* ─────────────────────────────
-     STEP 2b
-  ───────────────────────────── */
-  function buildLetter(num) {
-    return 'I write to request that my IG account, account number ' + num + ' is to be treated as an account introduced by GWA Investments LTD.\n\nI understand and agree that in making this request, a portion of the spread/funding/commission applied to my account will be paid to GWA Investments LTD and I understand that the charges on my account may increase under this agreement.\n\nI am aware that I should require further details of the rates applied to my account and the portion of the spread/funding/commission paid to GWA Investments LTD. I can request this from IG.\n\nI also agree that data regarding my account, including transactions and account details, may be shared with GWA Investments LTD.';
+  function buildLetter(num){
+    return 'I write to request that my IG account, account number '+num+' is to be treated as an account introduced by GWA Investments LTD.\n\nI understand and agree that in making this request, a portion of the spread/funding/commission applied to my account will be paid to GWA Investments LTD and I understand that the charges on my account may increase under this agreement.\n\nI am aware that I should require further details of the rates applied to my account and the portion of the spread/funding/commission paid to GWA Investments LTD. I can request this from IG.\n\nI also agree that data regarding my account, including transactions and account details, may be shared with GWA Investments LTD.';
   }
 
-  on('f-subaccount', 'input', function() {
-    var val = this.value.trim().toUpperCase();
-    this.value = val;
-    var errEl = el('sub-err');
-    if (val.length === 5) {
-      var v = validaContoIG(val, S.cognome);
-      if (!v.ok) {
-        this.className = 'err';
-        errEl.textContent = v.msg; errEl.style.display = 'block';
-        el('btn-open-mail').disabled = true;
-        el('letter-ready').style.display = 'none';
-      } else {
-        this.className = 'ok';
-        errEl.style.display = 'none';
-        S.letterText = buildLetter(val);
-        el('btn-open-mail').disabled = false;
-        el('letter-ready').style.display = 'block';
-      }
-    } else {
-      this.className = '';
-      errEl.style.display = 'none';
-      el('btn-open-mail').disabled = true;
-      el('letter-ready').style.display = 'none';
-    }
+  on('f-subaccount','input',function(){
+    var val=this.value.trim().toUpperCase(); this.value=val;
+    var errEl=el('sub-err');
+    if(val.length===5){
+      var v=validaContoIG(val,S.cognome);
+      if(!v.ok){ this.className='err'; errEl.textContent=v.msg; errEl.style.display='block'; el('btn-open-mail').disabled=true; el('letter-ready').style.display='none'; }
+      else { this.className='ok'; errEl.style.display='none'; S.letterText=buildLetter(val); el('btn-open-mail').disabled=false; el('letter-ready').style.display='block'; }
+    } else { this.className=''; errEl.style.display='none'; el('btn-open-mail').disabled=true; el('letter-ready').style.display='none'; }
   });
 
-  on('btn-open-mail', 'click', function() {
-    var s = encodeURIComponent('Inducement Letter – GWA Investments');
-    var b = encodeURIComponent(S.letterText);
-    var cc = encodeURIComponent('info@itcup.it');
-    window.location.href = 'mailto:isd@ig.com?cc='+cc+'&subject='+s+'&body='+b;
+  on('btn-open-mail','click',function(){
+    var s=encodeURIComponent('Inducement Letter - GWA Investments');
+    var b=encodeURIComponent(S.letterText);
+    var cc=encodeURIComponent('info@itcup.it');
+    window.location.href='mailto:isd@ig.com?cc='+cc+'&subject='+s+'&body='+b;
   });
+  on('chk-letter-sent','change',function(){ el('btn-next-2b').disabled=!this.checked; });
+  on('btn-back-2b','click',function(){ nav('step-1',1); });
+  on('btn-next-2b','click',function(){ nav('step-3b',3); });
 
-  on('chk-letter-sent', 'change', function() { el('btn-next-2b').disabled = !this.checked; });
-  on('btn-back-2b', 'click', function() { nav('step-1', 1); });
-  on('btn-next-2b', 'click', function() { nav('step-3b', 3); });
-
-  /* ─────────────────────────────
-     STEP 2c
-  ───────────────────────────── */
-  function chkS2c() {
-    var a = el('f-other-account').value.trim();
-    var c = parseFloat(el('f-other-capital').value);
-    el('btn-next-2c').disabled = !(a.length > 2 && c >= 2500);
+  function chkS2c(){
+    var a=el('f-other-account').value.trim(); var c=parseFloat(el('f-other-capital').value);
+    el('btn-next-2c').disabled=!(a.length>2&&c>=2500);
   }
   on('f-other-account','input',chkS2c); on('f-other-capital','input',chkS2c);
   on('btn-back-2c','click',function(){ nav('step-1',1); });
   on('btn-next-2c','click',function(){ buildSummary(); nav('step-confirm',4); });
 
-  /* ─────────────────────────────
-     STEP 3a
-  ───────────────────────────── */
-  function chkIGAccount(inputId, errId, btnId) {
-    var inp = el(inputId);
-    var val = inp.value.trim().toUpperCase();
-    inp.value = val;
-    var errEl = el(errId);
-    var capital = el(btnId === 'btn-next-3a' ? 'f-ig-capital' : 'f-sub-capital').value.trim();
-    var capOk = parseFloat(capital) >= 2500;
-    var acOk = false;
-    if (val.length === 5) {
-      var v = validaContoIG(val, S.cognome);
-      if (!v.ok) {
-        inp.className = 'err';
-        errEl.textContent = v.msg; errEl.style.display = 'block';
-      } else {
-        inp.className = 'ok';
-        errEl.style.display = 'none';
-        acOk = true;
-      }
-    } else {
-      inp.className = val.length > 0 ? '' : '';
-      errEl.style.display = 'none';
-    }
-    el(btnId).disabled = !(acOk && capOk);
+  function chkIG(inputId,errId,btnId){
+    var inp=el(inputId); var val=inp.value.trim().toUpperCase(); inp.value=val;
+    var errEl=el(errId);
+    var capId=btnId==='btn-next-3a'?'f-ig-capital':'f-sub-capital';
+    var capOk=parseFloat(el(capId).value)>=2500;
+    var acOk=false;
+    if(val.length===5){
+      var v=validaContoIG(val,S.cognome);
+      if(!v.ok){ inp.className='err'; errEl.textContent=v.msg; errEl.style.display='block'; }
+      else { inp.className='ok'; errEl.style.display='none'; acOk=true; }
+    } else { inp.className=''; errEl.style.display='none'; }
+    el(btnId).disabled=!(acOk&&capOk);
   }
 
-  on('f-ig-account','input',function(){ chkIGAccount('f-ig-account','ig-account-err','btn-next-3a'); });
-  on('f-ig-capital','input',function(){ chkIGAccount('f-ig-account','ig-account-err','btn-next-3a'); });
+  on('f-ig-account','input',function(){ chkIG('f-ig-account','ig-account-err','btn-next-3a'); });
+  on('f-ig-capital','input',function(){ chkIG('f-ig-account','ig-account-err','btn-next-3a'); });
   on('btn-back-3a','click',function(){ nav('step-2a',2); });
   on('btn-next-3a','click',function(){ buildSummary(); nav('step-confirm',4); });
 
-  /* ─────────────────────────────
-     STEP 3b
-  ───────────────────────────── */
-  on('f-sub-confirm','input',function(){ chkIGAccount('f-sub-confirm','sub-confirm-err','btn-next-3b'); });
-  on('f-sub-capital','input',function(){ chkIGAccount('f-sub-confirm','sub-confirm-err','btn-next-3b'); });
+  on('f-sub-confirm','input',function(){ chkIG('f-sub-confirm','sub-confirm-err','btn-next-3b'); });
+  on('f-sub-capital','input',function(){ chkIG('f-sub-confirm','sub-confirm-err','btn-next-3b'); });
   on('btn-back-3b','click',function(){ nav('step-2b',2); });
   on('btn-next-3b','click',function(){ buildSummary(); nav('step-confirm',4); });
 
-  /* ─────────────────────────────
-     CONFIRM
-  ───────────────────────────── */
-  function buildSummary() {
-    var bnames = { ig:'IG', scalable:'Scalable Capital', crypto:'BrokerCrypto' };
-    var rows = [['Nome', S.nome+' '+S.cognome], ['Email', S.email], ['Broker', bnames[S.broker]]];
-    if (S.broker === 'ig') {
-      rows.push(['Tipo', S.igStatus==='new' ? 'Nuovo conto' : 'Sub-account']);
-      if (S.igStatus==='new') {
-        rows.push(['Conto IG', el('f-ig-account').value.trim().toUpperCase()]);
-        rows.push(['Versamento', '€ '+Number(el('f-ig-capital').value).toLocaleString('it-IT')]);
-      } else {
-        rows.push(['Sub-account', el('f-sub-confirm').value.trim().toUpperCase()]);
-        rows.push(['Versamento', '€ '+Number(el('f-sub-capital').value).toLocaleString('it-IT')]);
-      }
-    } else {
-      rows.push(['Conto', el('f-other-account').value.trim()]);
-      rows.push(['Versamento', '€ '+Number(el('f-other-capital').value).toLocaleString('it-IT')]);
-    }
-    el('summary-rows').innerHTML = rows.map(function(r){
-      return '<div class="sum-row"><span class="sum-key">'+r[0]+'</span><span class="sum-val">'+r[1]+'</span></div>';
-    }).join('');
-    el('confirm-broker-text').textContent = bnames[S.broker];
+  function buildSummary(){
+    var bn={ig:'IG',scalable:'Scalable Capital',crypto:'BrokerCrypto'};
+    var rows=[['Nome',S.nome+' '+S.cognome],['Email',S.email],['Broker',bn[S.broker]]];
+    if(S.broker==='ig'){
+      rows.push(['Tipo',S.igStatus==='new'?'Nuovo conto':'Sub-account']);
+      if(S.igStatus==='new'){ rows.push(['Conto IG',el('f-ig-account').value.trim().toUpperCase()]); rows.push(['Versamento','E '+Number(el('f-ig-capital').value).toLocaleString('it-IT')]); }
+      else { rows.push(['Sub-account',el('f-sub-confirm').value.trim().toUpperCase()]); rows.push(['Versamento','E '+Number(el('f-sub-capital').value).toLocaleString('it-IT')]); }
+    } else { rows.push(['Conto',el('f-other-account').value.trim()]); rows.push(['Versamento','E '+Number(el('f-other-capital').value).toLocaleString('it-IT')]); }
+    el('summary-rows').innerHTML=rows.map(function(r){ return '<div class="sum-row"><span class="sum-key">'+r[0]+'</span><span class="sum-val">'+r[1]+'</span></div>'; }).join('');
+    el('confirm-broker-text').textContent=bn[S.broker];
   }
 
-  /* chk-p2 non deselezionabile */
-  on('chk-p2','change',function(){ this.checked = true; });
-
+  on('chk-p2','change',function(){ this.checked=true; });
   on('btn-back-confirm','click',function(){
-    if (S.broker==='ig' && S.igStatus==='new') nav('step-3a',3);
-    else if (S.broker==='ig' && S.igStatus==='existing') nav('step-3b',3);
+    if(S.broker==='ig'&&S.igStatus==='new') nav('step-3a',3);
+    else if(S.broker==='ig'&&S.igStatus==='existing') nav('step-3b',3);
     else nav('step-2c',2);
   });
-
   on('btn-confirm','click',function(){
-    el('success-email').textContent = S.email;
-    if (S.broker==='ig' && S.igStatus==='existing') {
-      el('succes
+    el('success-email').textContent=S.email;
+    if(S.broker==='ig'&&S.igStatus==='existing') el('success-extra').textContent='Iscrizione confermata. La classifica sara attiva dopo che IG avra processato la inducement letter (2-3 giorni lavorativi).';
+    nav('step-success',4);
+    el('prog-label').textContent='Iscrizione completata';
+    el('prog-fill').style.width='100%';
+  });
+});
+</script>
+</body>
+</html>
