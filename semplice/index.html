@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITcup - Iscrizione Competizione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#C0272D;--surface:rgba(0,0,0,.2);--surface-2:rgba(0,0,0,.14);
+  --surface-hover:rgba(0,0,0,.3);--border:rgba(255,255,255,.16);
+  --border-strong:rgba(255,255,255,.26);--text:#fff;
+  --text-2:rgba(255,255,255,.75);--text-3:rgba(255,255,255,.4);
+  --teal:#2BA8A0;--teal-hover:#239990;--green:#2ECC71;
+  --green-dim:rgba(46,204,113,.15);--green-border:rgba(46,204,113,.35);
+  --amber-dim:rgba(245,166,35,.15);--amber-border:rgba(245,166,35,.4);
+  --err:rgba(255,100,100,.85);--radius:5px;--radius-lg:8px
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:48px 16px 80px;line-height:1.5}
+.header{text-align:center;margin-bottom:28px}
+.header h1{font-size:26px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;margin-bottom:12px}
+.header p{font-size:12px;color:var(--text-2);line-height:1.65;max-width:440px;margin:0 auto}
+.container{max-width:500px;margin:0 auto}
+.pw{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:12px 16px;margin-bottom:14px}
+.pt{display:flex;justify-content:space-between;margin-bottom:8px}
+.pl{font-size:10px;font-weight:500;color:var(--text-2)}
+.pc{font-family:'Inter Mono',monospace;font-size:10px;color:var(--text-3)}
+.ptrack{height:2px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden}
+.pfill{height:100%;background:var(--teal);border-radius:99px;transition:width .4s ease}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;margin-bottom:10px}
+.ct{font-size:14px;font-weight:600;margin-bottom:4px}
+.cs{font-size:12px;color:var(--text-2);line-height:1.6}
+.sl{font-family:'Inter Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);margin-bottom:7px}
+.bg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.bo{border:1px solid var(--border-strong);border-radius:var(--radius);padding:14px 8px 12px;display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer;background:var(--surface-2);transition:all .15s;user-select:none}
+.bo:hover{background:var(--surface-hover);border-color:rgba(255,255,255,.45)}
+.bo.sel{background:rgba(255,255,255,.95);border:1.5px solid #fff}
+.bo.sel .bn{color:#C0272D}
+.bo.sel .bnote{color:rgba(192,39,45,.55)}
+.bo *{pointer-events:none}
+.blw{width:44px;height:44px;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.blph{width:44px;height:44px;border-radius:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:rgba(255,255,255,.35);text-align:center;line-height:1.3}
+.bn{font-size:11px;font-weight:600;color:#fff}
+.bnote{font-size:9px;color:var(--text-3);text-align:center;line-height:1.3}
+.alert{border-radius:var(--radius);padding:10px 12px;display:flex;gap:8px;align-items:flex-start;font-size:11px;line-height:1.55;margin-bottom:10px}
+.ai{font-size:12px;flex-shrink:0;margin-top:1px}
+.a-amber{background:var(--amber-dim);border:1px solid var(--amber-border);color:#F5C26B}
+.a-amber strong{color:#F5A623}
+.a-white{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75)}
+.a-white strong{color:#fff}
+.a-green{background:var(--green-dim);border:1px solid var(--green-border);color:#6EE8A0}
+.alert strong{font-weight:600}
+.fg{margin-bottom:10px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.fl{display:block;font-size:11px;color:var(--text-2);margin-bottom:4px}
+input[type=text],input[type=email],input[type=number]{width:100%;height:36px;padding:0 10px;border:1px solid rgba(255,255,255,.35);border-radius:3px;font-family:'Inter',sans-serif;font-size:13px;color:#fff;background:rgba(255,255,255,.06);outline:none;transition:border-color .15s,background .15s;-webkit-appearance:none;appearance:none}
+input:focus{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.1)}
+input::placeholder{color:rgba(255,255,255,.25)}
+input.err{border-color:rgba(255,100,100,.8)!important}
+input.ok{border-color:rgba(43,168,160,.8)!important}
+.hint{font-size:10px;color:var(--text-3);margin-top:3px}
+.herr{font-size:10px;color:var(--err);margin-top:3px;display:none;line-height:1.4}
+.ck{display:flex;gap:9px;align-items:flex-start;padding:10px 12px;background:rgba(0,0,0,.14);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:8px}
+.ck:last-child{margin-bottom:0}
+.ck input[type=checkbox]{width:14px;height:14px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:var(--teal)}
+.ck label{font-size:11px;color:var(--text-2);line-height:1.5;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 18px;border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s;text-decoration:none;white-space:nowrap}
+.b-teal{background:var(--teal);color:#fff}
+.b-teal:hover:not(:disabled){background:var(--teal-hover)}
+.b-ghost{background:rgba(0,0,0,.14);color:rgba(255,255,255,.75);border:1px solid var(--border-strong)}
+.b-ghost:hover:not(:disabled){background:rgba(0,0,0,.24);color:#fff}
+.b-sub{background:var(--teal);color:#fff;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;height:44px;border-radius:3px}
+.b-sub:hover:not(:disabled){background:var(--teal-hover)}
+.b-full{width:100%}
+.b-sm{height:32px;font-size:11px;padding:0 12px}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.nr{display:flex;gap:8px;margin-top:4px}
+.nr .btn{flex:1}
+.sr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:12px}
+.sr:last-child{border-bottom:none}
+.sk{color:var(--text-2)}
+.sv{font-weight:500;font-family:'Inter Mono',monospace;font-size:11px}
+.screen{display:none}
+.screen.active{display:block;animation:fi .18s ease}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.lt{font-size:11px;color:var(--text-2);line-height:1.65;margin-bottom:14px}
+.lt strong{color:#fff}
+.mb{display:none;background:rgba(0,0,0,.28);border-bottom:1px solid rgba(255,255,255,.18);padding:7px 16px;font-size:10px;color:rgba(255,255,255,.75);font-weight:500;text-align:center;position:fixed;top:0;left:0;right:0;z-index:100}
+@media(max-width:480px){.mb{display:block}body{padding-top:46px}.header h1{font-size:20px}.fr{grid-template-columns:1fr}}
+.si{width:56px;height:56px;border-radius:50%;background:var(--green-dim);border:1.5px solid var(--green-border);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 14px}
+.sc{text-align:center;padding:28px 20px}
+.sc h2{font-size:18px;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.sc p{font-size:12px;color:var(--text-2);line-height:1.6}
+.wa-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;padding:0 20px;height:42px;border-radius:var(--radius);text-decoration:none;width:100%}
+.wa-btn:hover{background:#1fb859}
+</style>
+</head>
+<body>
+<div class="mb">&#9888; Alcune funzioni richiedono il desktop</div>
+<div class="header">
+  <h1>Iscriviti al campionato</h1>
+  <p>Per concorrere e necessario avere un conto aperto presso uno dei broker convenzionati. Compila il modulo: sarai contattato dallo staff per i passaggi successivi.</p>
+</div>
+<div class="container">
+  <div class="pw">
+    <div class="pt"><span class="pl" id="prog-label">Selezione broker</span><span class="pc" id="prog-count">1 / 3</span></div>
+    <div class="ptrack"><div class="pfill" id="prog-fill" style="width:33%"></div></div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="screen active" id="step-1">
+    <div class="sl">Scegli il tuo intermediario</div>
+    <div class="card">
+      <div class="bg">
+        <div class="bo" id="broker-ig">
+          <div class="blw"><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="white"/><text x="3" y="30" font-family="Arial Black,Arial" font-weight="900" font-size="26" fill="#E8192C">IG</text></svg></div>
+          <div class="bn">IG</div><div class="bnote">Tramite GWA</div>
+        </div>
+        <div class="bo" id="broker-scalable">
+          <div class="blw"><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="#F5F5F5"/><circle cx="20" cy="20" r="12" fill="none" stroke="#00C4A0" stroke-width="4"/><circle cx="20" cy="20" r="5" fill="#00C4A0"/></svg></div>
+          <div class="bn">Scalable</div><div class="bnote">Iscrizione diretta</div>
+        </div>
+        <div class="bo" id="broker-crypto">
+          <div class="blph">BROKER<br>CRYPTO</div>
+          <div class="bn">BrokerCrypto</div><div class="bnote">Iscrizione diretta</div>
+        </div>
+      </div>
+    </div>
+    <div id="ig-info" style="display:none;">
+      <div class="alert a-white" style="margin-bottom:10px;">
+        <span class="ai">&#9432;</span>
+        <div>Dopo l'invio dei dati, lo staff di ITcup ti contatter&#224; per guidarti nei passaggi con IG.</div>
+      </div>
+    </div>
+    <div id="data-form-1" style="display:none;">
+      <div class="sl" style="margin-top:2px;">I tuoi dati</div>
+      <div class="card">
+        <div class="fr"><div><label class="fl">Nome *</label><input type="text" id="f-nome"></div><div><label class="fl">Cognome *</label><input type="text" id="f-cognome"></div></div>
+        <div class="fr"><div><label class="fl">Luogo di nascita *</label><input type="text" id="f-luogo-nascita"></div><div><label class="fl">Provincia di nascita *</label><input type="text" id="f-prov-nascita"></div></div>
+        <div class="fr"><div><label class="fl">Data di nascita (GG/MM/AAAA) *</label><input type="text" id="f-data-nascita" placeholder="GG/MM/AAAA"></div><div><label class="fl">Luogo di residenza *</label><input type="text" id="f-luogo-res"></div></div>
+        <div class="fr"><div><label class="fl">Provincia di residenza *</label><input type="text" id="f-prov-res"></div><div><label class="fl">Indirizzo *</label><input type="text" id="f-indirizzo"></div></div>
+        <div class="fr"><div><label class="fl">CAP *</label><input type="text" id="f-cap"></div><div><label class="fl">Codice fiscale *</label><input type="text" id="f-cf" maxlength="16" style="text-transform:uppercase"><div class="herr" id="cf-err">Codice fiscale non valido</div></div></div>
+        <div class="fr" style="margin-bottom:0;"><div><label class="fl">Email *</label><input type="email" id="f-email"></div><div><label class="fl">Telefono *</label><input type="text" id="f-telefono"></div></div>
+      </div>
+    </div>
+    <div class="nr" style="margin-top:0;"><button class="btn b-teal b-full" id="btn-step1" disabled>Continua &#8594;</button></div>
+  </div>
+
+  <!-- STEP 2: IG attesa staff -->
+  <div class="screen" id="step-2a">
+    <div class="card sc">
+      <div class="si">&#10003;</div>
+      <div style="font-size:17px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.02em;">Richiesta ricevuta!</div>
+      <div style="font-size:12px;color:var(--text-2);line-height:1.75;margin-bottom:20px;">
+        Abbiamo ricevuto i tuoi dati. Lo staff di ITcup ti contatter&#224; quanto prima per guidarti nei passaggi successivi per collegare il tuo conto IG al nostro partner GWA.<br><br>
+        <strong style="color:#fff;">Siamo operativi dal luned&#236; al venerd&#236;, negli orari lavorativi.</strong><br>
+        Le richieste ricevute nel weekend saranno gestite a partire dal luned&#236; mattina.
+      </div>
+      <div style="background:rgba(0,0,0,.18);border:1px solid var(--border-strong);border-radius:var(--radius);padding:16px;">
+        <div style="font-size:10px;color:var(--text-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-family:'Inter Mono',monospace;">Hai bisogno di assistenza?</div>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:12px;line-height:1.5;">Scrivici su WhatsApp, ti risponderemo appena possibile nei giorni lavorativi.</div>
+        <a href="https://wa.me/393487993271" target="_blank" rel="noopener" class="wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Scrivici su WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="nr" style="margin-top:6px;"><button class="btn b-ghost b-full" id="btn-back-2a">&#8592; Modifica dati</button></div>
+  </div>
+
+  <!-- STEP 2c: Scalable / Crypto -->
+  <div class="screen" id="step-2c">
+    <div class="card">
+      <div class="ct" style="margin-bottom:4px;" id="other-broker-title">Iscrizione</div>
+      <div class="cs" style="margin-bottom:13px;">Inserisci i dati del tuo conto per partecipare.</div>
+      <div class="fg"><label class="fl">Numero di conto *</label><input type="text" id="f-other-account"></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl">Versamento iniziale (&#8364;) *</label><input type="number" id="f-other-capital" placeholder="Es. 10000" min="2500"><div class="hint">Minimo &#8364; 2.500</div></div>
+    </div>
+    <div class="nr"><button class="btn b-ghost" id="btn-back-2c">&#8592; Indietro</button><button class="btn b-teal" id="btn-next-2c" disabled>Continua &#8594;</button></div>
+  </div>
+
+  <!-- STEP 3: Conferma -->
+  <div class="screen" id="step-confirm">
+    <div class="sl">Riepilogo iscrizione</div>
+    <div class="card" style="margin-bottom:10px;"><div id="sum-rows"></div></div>
+    <div class="lt">
+      Accetto per intero il bando del 28 Campionato ITCUP di Borsa edizione 2026 cosi come pubblicato sul sito <strong>www.itcup.it</strong> ed accetto fin da ora sue eventuali modifiche successive.<br><br>
+      Partecipero al Campionato con il conto <span id="confirm-broker" style="font-weight:600;color:#fff;"></span>.
+    </div>
+    <div class="card">
+      <div class="ck"><input type="checkbox" id="chk-p1"><label for="chk-p1">Concedo a Borsaefinanza srl l'autorizzazione a trattare i miei dati personali ai sensi del regolamento UE 2016/679 come meglio specificato nel regolamento</label></div>
+      <div class="ck"><input type="checkbox" id="chk-p2" checked><label for="chk-p2">Autorizzo Borsaefinanza srl a richiedere alle sim i miei estratti conto onde verificarne la regolarita ed altresi autorizzo la sim stessa a fornirli</label></div>
+      <div class="ck"><input type="checkbox" id="chk-p3"><label for="chk-p3">Autorizzo Borsaefinanza srl e l'intermediario a diffondere al pubblico ed alla stampa il dettaglio delle operazioni da me eseguite.</label></div>
+      <div class="ck"><input type="checkbox" id="chk-p4"><label for="chk-p4">Autorizzo Borsaefinanza SRL a inserire i miei dati personali per l'iscrizione al database e alla Newsletter di ITCUP</label></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+      <button class="btn b-sub b-full" id="btn-confirm">INOLTRA LA RICHIESTA D'ISCRIZIONE &gt;&gt;</button>
+      <button class="btn b-ghost b-full" id="btn-back-confirm">&#8592; Modifica dati</button>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="screen" id="step-success">
+    <div class="card sc">
+      <div class="si">&#10003;</div>
+      <h2>Iscrizione completata!</h2>
+      <p style="margin-bottom:14px;">Abbiamo ricevuto la tua iscrizione. Riceverai conferma a <strong id="success-email" style="color:#fff;"></strong>.</p>
+      <div class="alert a-green" style="text-align:left;"><span class="ai">&#128204;</span><div id="success-extra">La tua partecipazione e attiva. Buona fortuna!</div></div>
+    </div>
+  </div>
+
+</div>
+<script>
+window.addEventListener('load',function(){
+  var S={broker:null,nome:'',cognome:'',email:''};
+  var cur='step-1';
+  function el(id){return document.getElementById(id)}
+  function on(id,ev,fn){el(id).addEventListener(ev,fn)}
+  function nav(id,step){
+    el(cur).classList.remove('active');
+    el(id).classList.add('active');
+    cur=id;
+    var lbl=['Selezione broker','Conferma dati','Riepilogo'];
+    el('prog-label').textContent=lbl[step-1]||lbl[0];
+    el('prog-count').textContent=step+' / 3';
+    el('prog-fill').style.width=(step/3*100)+'%';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function validaCF(cf){
+    cf=cf.toUpperCase().trim();
+    return cf.length===16&&/^[A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$/.test(cf);
+  }
+  var REQ=['f-nome','f-cognome','f-luogo-nascita','f-prov-nascita','f-data-nascita','f-luogo-res','f-prov-res','f-indirizzo','f-cap','f-cf','f-email','f-telefono'];
+  function chkS1(){
+    var filled=REQ.every(function(id){var e=el(id);return e&&e.value.trim().length>0});
+    var emailOk=/\S+@\S+\.\S+/.test(el('f-email').value.trim());
+    var cf=el('f-cf').value;
+    var cfOk=validaCF(cf);
+    if(cf.trim().length>0&&!cfOk){el('f-cf').className='err';el('cf-err').style.display='block';}
+    else{el('f-cf').className=cf.trim().length===16?'ok':'';el('cf-err').style.display='none';}
+    el('btn-step1').disabled=!(filled&&emailOk&&cfOk&&S.broker!==null);
+  }
+  ['ig','scalable','crypto'].forEach(function(b){
+    on('broker-'+b,'click',function(){
+      S.broker=b;
+      ['ig','scalable','crypto'].forEach(function(x){el('broker-'+x).classList.remove('sel')});
+      el('broker-'+b).classList.add('sel');
+      el('ig-info').style.display=b==='ig'?'block':'none';
+      el('data-form-1').style.display='block';
+      chkS1();
+    });
+  });
+  REQ.forEach(function(id){on(id,'input',chkS1)});
+  on('btn-step1','click',function(){
+    S.nome=el('f-nome').value.trim();S.cognome=el('f-cognome').value.trim();S.email=el('f-email').value.trim();
+    if(S.broker==='ig') nav('step-2a',2);
+    else{el('other-broker-title').textContent='Iscrizione '+(S.broker==='scalable'?'Scalable':'BrokerCrypto');nav('step-2c',2);}
+  });
+  on('btn-back-2a','click',function(){nav('step-1',1)});
+  function chkS2c(){
+    var a=el('f-other-account').value.trim();
+    var c=parseFloat(el('f-other-capital').value);
+    el('btn-next-2c').disabled=!(a.length>2&&c>=2500);
+  }
+  on('f-other-account','input',chkS2c);on('f-other-capital','input',chkS2c);
+  on('btn-back-2c','click',function(){nav('step-1',1)});
+  on('btn-next-2c','click',function(){buildSum();nav('step-confirm',3)});
+  function buildSum(){
+    var bn={ig:'IG',scalable:'Scalable Capital',crypto:'BrokerCrypto'};
+    var rows=[['Nome',S.nome+' '+S.cognome],['Email',S.email],['Broker',bn[S.broker]]];
+    if(S.broker!=='ig'){
+      rows.push(['Conto',el('f-other-account').value.trim()]);
+      rows.push(['Versamento','EUR '+Number(el('f-other-capital').value).toLocaleString('it-IT')]);
+    }
+    el('sum-rows').innerHTML=rows.map(function(r){
+      return '<div class="sr"><span class="sk">'+r[0]+'</span><span class="sv">'+r[1]+'</span></div>';
+    }).join('');
+    el('confirm-broker').textContent=bn[S.broker];
+  }
+  on('chk-p2','change',function(){this.checked=true});
+  on('btn-back-confirm','click',function(){
+    if(S.broker==='ig') nav('step-2a',2);
+    else nav('step-2c',2);
+  });
+  on('btn-confirm','click',function(){
+    el('success-email').textContent=S.email;
+    if(S.broker==='ig') el('success-extra').textContent='Richiesta confermata. Lo staff ti contatterà a breve per i passaggi successivi con IG.';
+    nav('step-success',3);
+    el('prog-label').textContent='Completato';
+    el('prog-fill').style.width='100%';
+  });
+});
+</script>
+</body>
+</html>
